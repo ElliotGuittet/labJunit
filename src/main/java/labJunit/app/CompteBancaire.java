@@ -1,7 +1,5 @@
 package labJunit.app;
 
-import static org.junit.jupiter.api.Assertions.fail;
-
 public class CompteBancaire {
     public double soldeCompte;
 
@@ -11,7 +9,7 @@ public class CompteBancaire {
 
     public double debiterSolde(double montant) {
         if (montant < 0) {
-            return fail();
+            throw new IllegalArgumentException("Le montant ne peut pas être négatif");
         } else {
             double newSolde = soldeCompte - montant;
 
@@ -21,7 +19,7 @@ public class CompteBancaire {
 
     public double crediterSolde(double montant) {
         if (montant < 0) {
-            return fail();
+            throw new IllegalArgumentException("Le montant ne peut pas être négatif");
         } else {
             double newSolde = soldeCompte + montant;
 

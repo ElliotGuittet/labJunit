@@ -1,5 +1,6 @@
 package labJunit.app;
 
+import static org.junit.Assert.assertThrows;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
@@ -13,7 +14,7 @@ class TestCompteBancaire {
     @Test
     void testNegDebitSolde() {
 		CompteBancaire cb = new CompteBancaire(150);
-		assertEquals(-50,cb.debiterSolde(200));
+		assertThrows(IllegalArgumentException.class, () -> cb.debiterSolde(-50));
 	}
 
 	@Test
@@ -23,8 +24,8 @@ class TestCompteBancaire {
 	}
 
 	@Test
-	void testGrandNombreCreditSolde() {
+	void testFailCreditSolde() {
 		CompteBancaire cb = new CompteBancaire(150);
-		assertEquals(1650,cb.crediterSolde(1500));
+		assertThrows(IllegalArgumentException.class, () -> cb.crediterSolde(-50));
 	}
 }
