@@ -23,8 +23,8 @@ class TestCompteBancaire {
 	}
 
 	@Test
-	void testFailCreditSolde() {
+	void testGrandNombreCreditSolde() {
 		CompteBancaire cb = new CompteBancaire(150);
-		assertEquals(fail(),cb.crediterSolde(-50));
+		assertEquals(1650,cb.crediterSolde(1500));
 	}
 }
