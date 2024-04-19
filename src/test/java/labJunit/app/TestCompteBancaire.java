@@ -32,4 +32,10 @@ class TestCompteBancaire {
 		CompteBancaire cb = new CompteBancaire(150);
 		assertThrows(IllegalArgumentException.class, () -> cb.crediterSolde(-50));
 	}
+
+	@Test
+	void testBigMontantCreditSolde() {
+		CompteBancaire cb = new CompteBancaire(150);
+		assertEquals(1650,cb.crediterSolde(1500));
+	}
 }
