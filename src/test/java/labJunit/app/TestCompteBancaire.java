@@ -12,9 +12,14 @@ class TestCompteBancaire {
 		assertEquals(100,cb.debiterSolde(50));
 	}
     @Test
-    void testNegDebitSolde() {
+    void testNegMontantDebitSolde() {
 		CompteBancaire cb = new CompteBancaire(150);
 		assertThrows(IllegalArgumentException.class, () -> cb.debiterSolde(-50));
+	}
+    @Test
+    void testNegDebitSolde() {
+		CompteBancaire cb = new CompteBancaire(150);
+		assertEquals(-50, cb.debiterSolde(200));
 	}
 
 	@Test
