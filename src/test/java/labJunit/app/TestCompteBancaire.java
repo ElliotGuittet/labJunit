@@ -36,6 +36,6 @@ class TestCompteBancaire {
 	@Test
 	void testBigMontantCreditSolde() {
 		CompteBancaire cb = new CompteBancaire(150);
-		assertEquals(1650,cb.crediterSolde(1500));
+		assertEquals(1651,cb.crediterSolde(1501));
 	}
 }
